@@ -38,7 +38,6 @@ const ProfileSelect: React.FC<ProfileSelectProps> = ({
             alt="Your profile picture"
             className="profile-select__image"
             onClick={onEdit}
-            style={{ cursor: "pointer" }}
             onError={handleImageError}
           />
         ) : (

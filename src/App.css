@@ -88,6 +88,7 @@
   margin-bottom: 15px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -121,6 +122,7 @@
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border-radius: 10px;
 }
+
 
 .profile-form-card__image-info {
   padding: 0;
@@ -489,7 +491,6 @@
   position: absolute;
   border-radius: 50%;
   bottom: -50px;
-  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -818,6 +819,14 @@
   .profile-form-card__form {
     padding: 20px;
   }
+  .profile-form-card__radio-group {
+    gap: 5px;
+  }
+  .profile-form-card__radio-label {
+    padding: 8px 12px;
+      font-size: 0.8rem;
+      gap: 6px;
+  }
 
   .profile-details__background {
     min-height: 150px;
@@ -863,5 +872,118 @@
 
   .profile-form-card__radio-group {
     flex-direction: column;
+  }
+}
+
+/* ==========================================
+   DARK MODE OVERRIDES
+========================================== */
+@media (prefers-color-scheme: dark) {
+  /* Cards */
+  .profile-form-card,
+  .profile-card__preview,
+  .profile-details__card {
+    background-color: #221f1f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Image section gradient */
+  .profile-form-card__image-section {
+    background: linear-gradient(135deg, #2a2a2a 0%, #333333 100%);
+  }
+
+  /* Inputs */
+  .input {
+    background-color: #1a1a1a;
+    border-color: #404040;
+    color: #f0f0f0;
+  }
+
+  .input:focus {
+    background-color: #252525;
+    border-color: #4d90fe;
+  }
+
+  .input::placeholder {
+    color: #666;
+  }
+
+  /* Upload button */
+  .upload-btn {
+    background-color: #333;
+    border-color: #404040;
+    color: #f0f0f0;
+  }
+
+  .upload-btn:hover {
+    background-color: #404040;
+  }
+
+  .upload-btn svg {
+    color: #999;
+  }
+
+  /* Placeholders */
+  .profile-select__placeholder,
+  .profile-card__preview-placeholder,
+  .profile-details__placeholder {
+    background: #1a1a1a;
+    border-color: #404040;
+    color: #666;
+  }
+
+  /* Radio buttons */
+  .profile-form-card__radio-label {
+    background: #1a1a1a;
+    border-color: #404040;
+    color: #f0f0f0;
+  }
+
+  .profile-form-card__radio-label:hover {
+    background: #252525;
+    border-color: #4d90fe;
+  }
+
+  .profile-form-card__radio-label:has(input[type="radio"]:checked) {
+    background: #1e2a3a;
+    border-color: #4d90fe;
+  }
+
+  /* Icons */
+  .url-input-icon,
+  .profile-select__placeholder-icon {
+    color: #666;
+  }
+
+  /* Back button */
+  .profile-details__back-btn {
+    color: #f0f0f0;
+  }
+
+  .profile-details__back-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Labels and text */
+  .label {
+    color: #f0f0f0;
+  }
+
+  .profile-form-card__image-title {
+    color: #f0f0f0;
+  }
+
+  .profile-form-card__image-description {
+    color: #a0a0a0;
+  }
+
+  .profile-card__preview-name,
+  .profile-details__name {
+    color: #f0f0f0;
+  }
+
+  .profile-card__preview-age,
+  .profile-details__age {
+    color: #a0a0a0;
   }
 }
