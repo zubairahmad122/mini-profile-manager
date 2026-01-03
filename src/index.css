@@ -1,0 +1,194 @@
+/* =========================
+   Global Reset
+========================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Accessibility
+========================= */
+
+/* Focus visible for keyboard navigation */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #4d90fe;
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 9999;
+}
+
+.skip-to-main:focus {
+  top: 0;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: #000;
+    --text-secondary: #000;
+  }
+}
+
+/* =========================
+   Root Variables
+========================= */
+:root {
+  --primary: #4f46e5;
+  --bg: #f6f8fa;
+  --card-bg: #ffffff;
+  --card-gradient: linear-gradient(159deg, rgba(8,146,208,1) 0%, rgba(75,0,130,1) 100%);
+  --border: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+}
+
+
+
+/* =========================
+   Base Styles
+========================= */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+
+#root {
+  
+  padding: 4rem 1rem;
+}
+
+/* =========================
+   Common Elements
+========================= */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Remove default button styles but keep accessibility */
+button::-moz-focus-inner {
+  border: 0;
+}
+
+
+/* =========================
+   Utility
+========================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.label{
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.input{
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.7rem 0.75rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.error-msg{
+  color: #d32f2f;
+  font-size: 0.80rem;
+  margin-top: 4px;
+}
+
+.profile-card__preview-image--placeholder{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #f3f3f3;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;  
+  
+}
+
+/* =========================
+   Accessibility Utilities
+========================= */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus trap for modals */
+.focus-trap:focus {
+  outline: none;
+}
+
+/* High contrast text for better readability */
+@media (prefers-contrast: high) {
+  body {
+    color: #000;
+    background-color: #fff;
+  }
+}
+
+/* Dark mode support */
